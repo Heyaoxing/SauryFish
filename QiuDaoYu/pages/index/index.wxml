@@ -1,7 +1,6 @@
 <!--index.wxml-->
 <view>
-<label>姓名/工号</label><label>考勤情况</label>
 <view wx:for="{{items}}">
-  <text>{{item.Name}}</text>
+  <text>{{item.name}}</text> <text>{{item.state}}</text> <text>{{item.time}}</text>
 </view>
 </view>
