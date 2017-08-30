@@ -1,5 +1,8 @@
 <!--index.wxml-->
 <view>
+  <view class="search">
+    <input placeholder="搜索姓名/打卡机号" bindtap="clickInput" />
+  </view>
   <view wx:for="{{items}}">
     <text>{{item.name}}</text> <text>{{item.state}}</text> <text>{{item.time}}</text>
   </view>

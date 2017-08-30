@@ -9,3 +9,14 @@ F:\git\SauryFish\SauryFish\SauryFish\bin\Debug\netcoreapp2.0\SauryFish.pdb
 F:\git\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.dll
 F:\git\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.pdb
 F:\git\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.csprojResolveAssemblyReference.cache
+F:\Github\SauryFish\SauryFish\SauryFish\bin\Debug\netcoreapp2.0\SauryFish.deps.json
+F:\Github\SauryFish\SauryFish\SauryFish\bin\Debug\netcoreapp2.0\SauryFish.runtimeconfig.json
+F:\Github\SauryFish\SauryFish\SauryFish\bin\Debug\netcoreapp2.0\SauryFish.runtimeconfig.dev.json
+F:\Github\SauryFish\SauryFish\SauryFish\bin\Debug\netcoreapp2.0\SauryFish.dll
+F:\Github\SauryFish\SauryFish\SauryFish\bin\Debug\netcoreapp2.0\SauryFish.pdb
+F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.csproj.CoreCompileInputs.cache
+F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.AssemblyInfoInputs.cache
+F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.AssemblyInfo.cs
+F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.dll
+F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.pdb
+F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.csprojResolveAssemblyReference.cache

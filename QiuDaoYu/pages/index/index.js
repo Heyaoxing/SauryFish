@@ -21,5 +21,10 @@ Page({
         })
       }
     })
+  },
+  clickInput:function(event){
+    wx.navigateTo({
+      url: '../record/record'
+    })
   }
 })

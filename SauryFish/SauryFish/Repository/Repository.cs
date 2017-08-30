@@ -16,7 +16,7 @@ namespace SauryFish.Repository
             result.Data = new List<DescriptDto>();
             try
             {
-                var now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.AddDays(-1).Day, 0, 0, 0);
+                var now = new DateTime(DateTime.Now.Year,8, 20, 0, 0, 0);
                 var attend = new List<AttendanceRecord>();
                 using (var conn = DapperFactory.CrateMysqlConnection())
                 {
@@ -43,6 +43,38 @@ namespace SauryFish.Repository
                 result.Message = ex.Message;
             }
             return result;
+        }
+
+        /// <summary>
+        /// 查找详细
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        public static ResultPaging<RecordDto> GetRecord(RecordParam param)
+        {
+            ResultPaging<RecordDto> resultPaging = new ResultPaging<RecordDto>();
+            resultPaging.Data = new List<RecordDto>();
+
+            try
+            {
+                using (var conn = DapperFactory.CrateMysqlConnection())
+                {
+                    resultPaging.Data = conn.Query<RecordDto>(@"SELECT
+                                                                a.EnrollNumber, (CASE WHEN  b.Name IS NULL THEN a.EnrollNumber ELSE b.`Name` END) as Name,a.AttendancedOn
+                                                             FROM
+                                                                attendancerecord AS a
+                                                            LEFT JOIN personsetting AS b ON a.EnrollNumber = b.EnrollNumber
+                                                            WHERE a.EnrollNumber = @EnrollNumber or b.Name LIKE @Name LIMIT @PageIndex @PageSize;", new { EnrollNumber = param.Search, Name='%'+ param.Search+ '%', PageIndex=param.PageIndex, PageSize =param.PageSize}).ToList();
+                    resultPaging.Result = true;
+                    resultPaging.Message = $"Search:{param.Search},PageIndex:{param.PageIndex},PageSize:{param.PageSize}";
+                }
+            }
+            catch (Exception ex)
+            {
+                resultPaging.Result = false;
+                resultPaging.Message = ex.Message;
+            }
+            return resultPaging;
         }
     }
 }

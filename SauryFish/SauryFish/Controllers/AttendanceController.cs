@@ -12,9 +12,25 @@ namespace SauryFish.Controllers
     [Route("[controller]/[action]")]
     public class AttendanceController : Controller
     {
+        /// <summary>
+        /// 首页数据
+        /// </summary>
+        /// <returns></returns>
         public ResultObject<List<DescriptDto>> GetDescript()
         {
             var result = Repository.Repository.GetDescript();
+            return result;
+        }
+
+        /// <summary>
+        /// 查找详细
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ResultPaging<RecordDto> GetRecord(RecordParam param)
+        {
+            var result = Repository.Repository.GetRecord(param);
             return result;
         }
     }
