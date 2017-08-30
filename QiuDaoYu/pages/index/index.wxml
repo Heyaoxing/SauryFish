@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view>
-<view wx:for="{{items}}">
-  <text>{{item.name}}</text> <text>{{item.state}}</text> <text>{{item.time}}</text>
-</view>
+  <view wx:for="{{items}}">
+    <text>{{item.name}}</text> <text>{{item.state}}</text> <text>{{item.time}}</text>
+  </view>
 </view>

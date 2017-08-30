@@ -16,7 +16,7 @@ namespace SauryFish.Repository
             result.Data = new List<DescriptDto>();
             try
             {
-                var now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+                var now = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.AddDays(-1).Day, 0, 0, 0);
                 var attend = new List<AttendanceRecord>();
                 using (var conn = DapperFactory.CrateMysqlConnection())
                 {
