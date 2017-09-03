@@ -28,7 +28,7 @@ namespace SauryFish.Controllers
         /// <param name="param"></param>
         /// <returns></returns>
         [HttpPost]
-        public ResultPaging<RecordDto> GetRecord(RecordParam param)
+        public ResultPaging<RecordDto> GetRecord([FromBody]RecordParam param)
         {
             var result = Repository.Repository.GetRecord(param);
             return result;

@@ -64,7 +64,7 @@ namespace SauryFish.Repository
                                                              FROM
                                                                 attendancerecord AS a
                                                             LEFT JOIN personsetting AS b ON a.EnrollNumber = b.EnrollNumber
-                                                            WHERE a.EnrollNumber = @EnrollNumber or b.Name LIKE @Name LIMIT @PageIndex @PageSize;", new { EnrollNumber = param.Search, Name='%'+ param.Search+ '%', PageIndex=param.PageIndex, PageSize =param.PageSize}).ToList();
+                                                            WHERE a.EnrollNumber = @EnrollNumber or b.Name LIKE @Name ", new { EnrollNumber = param.Search, Name = '%' + param.Search + '%' }).Skip((param.PageIndex - 1) * param.PageSize).Take(param.PageSize).ToList();
                     resultPaging.Result = true;
                     resultPaging.Message = $"Search:{param.Search},PageIndex:{param.PageIndex},PageSize:{param.PageSize}";
                 }
