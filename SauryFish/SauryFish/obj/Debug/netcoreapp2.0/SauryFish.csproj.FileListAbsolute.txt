@@ -19,4 +19,3 @@ F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.Assemb
 F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.AssemblyInfo.cs
 F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.dll
 F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.pdb
-F:\Github\SauryFish\SauryFish\SauryFish\obj\Debug\netcoreapp2.0\SauryFish.csprojResolveAssemblyReference.cache
