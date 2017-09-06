@@ -1,5 +1,5 @@
 var PageIndex=1
-var PageSize=20
+var PageSize=25
 
 var GetList = function (that){
   that.setData({
@@ -7,14 +7,28 @@ var GetList = function (that){
   })
   wx.showNavigationBarLoading() //在标题栏中显示加载
   wx.request({
-    url: 'http://47.94.199.92:8025/Attendance/GetRecord',
-    data: { "PageIndex": PageIndex, "PageSize": PageSize, "Search": that.data.inputValue },
+    url: 'https://api.sauryfish.com/Attendance/GetRecord',
+    data: { "PageIndex": 1, "PageSize": PageSize, "Search": that.data.inputValue },
     method: 'POST',
     success: function (res) {
-      //更新数据
-      that.setData({
-        items: res.data.data
-      })
+      if (res.data.data.length>0){
+        //更新数据
+        that.setData({
+          items: res.data.data
+        })
+
+        that.setData({
+          searchLoading: true   //把"上拉加载"的变量设为false，显示  
+        });
+      }else{
+        that.setData({
+          searchLoadingComplete: true, //把“没有数据”设为true，显示  
+          searchLoading: false   //把"上拉加载"的变量设为false，隐藏  
+        });
+      }
+     
+
+      
 
       PageIndex++
     },
@@ -24,6 +38,50 @@ var GetList = function (that){
     }
   })
 }
+
+
+
+var GetPageList = function (that) {
+  
+  wx.showNavigationBarLoading() //在标题栏中显示加载
+  wx.request({
+    url: 'https://api.sauryfish.com/Attendance/GetRecord',
+    data: { "PageIndex": PageIndex, "PageSize": PageSize, "Search": that.data.inputValue },
+    method: 'POST',
+    success: function (res) {
+      var list = that.data.items
+      if (res.data.data.length>0){
+        for (var i = 0; i < res.data.data.length; i++) {
+          list.push(res.data.data[i]);
+        }
+        that.setData({
+          searchLoading: true   //把"上拉加载"的变量设为false，显示  
+        });
+      }else{
+        that.setData({
+          searchLoadingComplete: true, //把“没有数据”设为true，显示  
+          searchLoading: false   //把"上拉加载"的变量设为false，隐藏  
+        });
+      }
+      
+      //更新数据
+      that.setData({
+        items: list
+      })
+      PageIndex++
+
+      that.setData({
+        hidden: true
+      });
+    },
+    complete: function () {
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }
+  })
+}
+
+
 
 // record.js
 Page({
@@ -35,7 +93,9 @@ Page({
     inputValue : '',
     items: [],
     scrollTop: 0,
-    scrollHeight: 0
+    scrollHeight: 0,
+    searchLoading: false, //"上拉加载"的变量，默认false，隐藏  
+    searchLoadingComplete: false  //“没有数据”的变量，默认false，隐藏  
   },
 
   /**
@@ -88,7 +148,7 @@ Page({
   onPullDownRefresh: function () {
    
     var that = this
-    PageIndex = 0
+    PageIndex = 1
     GetList(that)
   },
 
@@ -111,30 +171,19 @@ Page({
   this.setData({
       inputValue: event.detail.value
     })
-  PageIndex = 0
+  PageIndex = 1
   var that = this
   GetList(that)
   },
 
   bindDownLoad: function () {
-    //   该方法绑定了页面滑动到底部的事件
     var that = this;
-    GetList(that);
+    console.log('出发滚动')
+    console.log(that.data.searchLoading)
+    console.log(that.data.searchLoadingComplete)
+    //   该方法绑定了页面滑动到底部的事件
+    if (that.data.searchLoading && !that.data.searchLoadingComplete) {
+      GetPageList(that);
+    }
   },
-  scroll: function (event) {
-    //   该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
-    this.setData({
-      scrollTop: event.detail.scrollTop
-    });
-  },
-  refresh: function (event) {
-    //   该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
-    PageIndex = 0;
-    this.setData({
-      items: [],
-      scrollTop: 0
-    });
-    GetList(this)
-  }
-
 })

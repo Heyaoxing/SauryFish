@@ -1,9 +1,17 @@
 <!--index.wxml-->
 <view>
-  <view class="search">
-    <input placeholder="搜索姓名/打卡机号" bindtap="clickInput" />
-  </view>
-  <view wx:for="{{items}}">
-    <text>{{item.name}}</text> <text>{{item.state}}</text> <text>{{item.time}}</text>
-  </view>
+ <view class='padding'>
+    <view class="wa-input-icon">
+        <text class="icon-left ion-search placeholder-icon"></text>
+        <input class="wa-input" placeholder="搜索姓名/打卡机号" bindtap="clickInput"/>
+    </view>
+</view>
+    <view class='space'></view>
+    <view wx:for="{{items}}">
+        <view class='wa-item'>
+            <text class="pull-right wa-mark wa-success">{{item.state}}</text>
+            <text>{{item.name}}</text>
+            <text>最近:{{item.time}}</text>
+        </view>
+    </view>
 </view>
