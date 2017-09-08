@@ -60,11 +60,11 @@ namespace SauryFish.Repository
                 using (var conn = DapperFactory.CrateMysqlConnection())
                 {
                     resultPaging.Data = conn.Query<RecordDto>(@"SELECT
-                                                                a.EnrollNumber, (CASE WHEN  b.Name IS NULL THEN a.EnrollNumber ELSE b.`Name` END) as Name,a.AttendancedOn
+                                                                a.EnrollNumber, (CASE WHEN  b.Name IS NULL THEN a.EnrollNumber ELSE b.`Name` END) as Name,a.AttendancedOn as Attendanced
                                                              FROM
                                                                 attendancerecord AS a
                                                             LEFT JOIN personsetting AS b ON a.EnrollNumber = b.EnrollNumber
-                                                            WHERE a.EnrollNumber = @EnrollNumber or b.Name LIKE @Name ", new { EnrollNumber = param.Search, Name = '%' + param.Search + '%' }).Skip((param.PageIndex - 1) * param.PageSize).Take(param.PageSize).ToList();
+                                                            WHERE a.EnrollNumber = @EnrollNumber or b.Name LIKE @Name order by a.AttendancedOn desc", new { EnrollNumber = param.Search, Name = '%' + param.Search + '%' }).Skip((param.PageIndex - 1) * param.PageSize).Take(param.PageSize).ToList();
                     resultPaging.Result = true;
                     resultPaging.Message = $"Search:{param.Search},PageIndex:{param.PageIndex},PageSize:{param.PageSize}";
                 }

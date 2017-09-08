@@ -5205,7 +5205,7 @@
       ]
     },
     "Microsoft.ApplicationInsights/2.4.0": {
-      "sha512": "4dX/zu3Psz9oM3ErU64xfOHuSxOwMxN6q5RabSkeYbX42Yn6dR/kDToqjs+txCRjrfHUxyYjfeJHu+MbCfvAsg==",
+      "sha512": "Wjoz96N5Ev1pCZqMpJbhsqAg023dQxAarM0jaikqPnPwJL/72t2xNdLWLqOssAzrY51P9xmZT2gb8zq4diMC8w==",
       "type": "package",
       "path": "microsoft.applicationinsights/2.4.0",
       "files": [
@@ -5225,7 +5225,7 @@
       ]
     },
     "Microsoft.ApplicationInsights.AspNetCore/2.1.1": {
-      "sha512": "kiGmzl9Cav34dF7AHVMoJxdJJQEeLB8KZGNwX1LjImG9iem5hGk4DkHpW7/m9Nh3DrL8IKSL3mqQo+IPqWfMRQ==",
+      "sha512": "skXSarhNxuHinznossRhGPmIrWg5Ed+nPmHM2oosgYH2YpL6buPUSDym8c/zVNal7zdfy9bYflyZlWduWidvEg==",
       "type": "package",
       "path": "microsoft.applicationinsights.aspnetcore/2.1.1",
       "files": [
@@ -5238,7 +5238,7 @@
       ]
     },
     "Microsoft.ApplicationInsights.DependencyCollector/2.4.1": {
-      "sha512": "RWxdX90MY6tNF8S5lwRvJcHiBMIWwVLCxd4TGIEl3X0yAKaolY2vs4zTCvyCIVkEAMs1aInTgWkYwOjzYvAHWw==",
+      "sha512": "n1riOFnqWOjqsTigoShuaaSMMhYUAA89GJfd6VL+YQ3WYtVO560xf/Xb1mayJ8vaXOCTh+2br7OrkkNsRf3m6A==",
       "type": "package",
       "path": "microsoft.applicationinsights.dependencycollector/2.4.1",
       "files": [
@@ -5256,7 +5256,7 @@
       ]
     },
     "Microsoft.AspNetCore/2.0.0": {
-      "sha512": "Pp4CNfgJgKTyU+oRQYh6InA1lwcZLi5ZsfTxWwixagbRsVdWrROBFnKGw+FvbbuzKNyMn4Cg5zRv99LjqxVIJA==",
+      "sha512": "y2Mygv4KobZoA2d45coHvLL5JVXwOgLZwOZ+dut5N3eyBPQa0gUtANNtWKiwMq5MyPiNxDYVVI6aA/BA42flvw==",
       "type": "package",
       "path": "microsoft.aspnetcore/2.0.0",
       "files": [
@@ -13380,7 +13380,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Users\\yaoxi\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13389,17 +13389,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "F:\\Github\\SauryFish\\SauryFish\\SauryFish\\SauryFish.csproj",
+      "projectUniqueName": "F:\\git\\SauryFish\\SauryFish\\SauryFish\\SauryFish.csproj",
       "projectName": "SauryFish",
-      "projectPath": "F:\\Github\\SauryFish\\SauryFish\\SauryFish\\SauryFish.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\Github\\SauryFish\\SauryFish\\SauryFish\\obj\\",
+      "projectPath": "F:\\git\\SauryFish\\SauryFish\\SauryFish\\SauryFish.csproj",
+      "packagesPath": "C:\\Users\\yaoxi\\.nuget\\packages\\",
+      "outputPath": "F:\\git\\SauryFish\\SauryFish\\SauryFish\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yaoxi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -9,6 +9,12 @@ namespace SauryFish.Dto
     {
         public int EnrollNumber { set; get; }
         public string Name { set; get; }
-        public DateTime AttendancedOn { set; get; }
+        public DateTime Attendanced { set; get; }
+        public string AttendancedOn {
+            get
+            {
+                return Attendanced.ToString("yyyy年MM月dd日 HH:mm:ss");
+            }
+        }
     }
 }
