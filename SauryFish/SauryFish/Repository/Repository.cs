@@ -30,8 +30,8 @@ namespace SauryFish.Repository
                         EnrollNumber= item.EnrollNumber,
                         Name = item.EnrollNumber.ToString(),
                         State = "正常",
-                        Date= item.AttendancedOn.ToString("yyyy年MM月dd"),
-                        Time= item.AttendancedOn.ToString("HH:mm:ss")
+                        Date= item.AttendancedOn.ToString("yyyy年MM月dd日"),
+                        Time= item.AttendancedOn.ToString("yyyy年MM月dd日 HH:mm:ss")
                     });
                 }
                 result.Result = true;
